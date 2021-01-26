@@ -1,25 +1,18 @@
-// Project Title
-// Your Name
-// Date
-//
-// Extra for Experts:
-// - describe what you did to take this project "above and beyond"
+// Grid Neighbours
 
-//grid neighbors
-
-let gird = createEmptyGrid(4, 4);
+let grid = createEmptyGrid(4, 4);
 let rows, cols, cellWidth, cellHeight;
 let bgMusic;
+
 function preload() {
-  bgMusic = loadSound("assests/song18.mp3");
+  bgMusic = loadSound("assets/song18.mp3");
 }
 
-
 function setup() {
-  bgMusic.loop();
   createCanvas(windowWidth, windowHeight);
-  rows = grid.lenght;
-  cols = grid[0].lenght;
+  bgMusic.loop();
+  rows = grid.length;
+  cols = grid[0].length;
   cellWidth = width/cols;
   cellHeight = height/rows;
 }
@@ -30,53 +23,51 @@ function draw() {
 }
 
 function mousePressed() {
-  let x = Math.floor(mouseX/cellWidth);
-  let y = Math.floor(mouseY/cellHeight);
+  
+  let x = Math.floor(mouseX / cellWidth);
+  let y = Math.floor(mouseY / cellHeight);
 
-  toggleCell(x, y); //self
+  toggleCell(x, y);   //self
   toggleCell(x, y-1); //north
   toggleCell(x, y+1); //south
   toggleCell(x+1, y); //east
   toggleCell(x-1, y); //west
-
 }
 
 function toggleCell(x, y) {
-  //check that the cordinates are in the array
-  if (x >= 0 && x < cols &&y >= 0 && y <  rows) {
+  //check that the coordinates are in the array
+  if (x >= 0 && x < cols && y >= 0 && y < rows) {
     if (grid[y][x] === 1) {
       grid[y][x] = 0;
     }
     else if (grid[y][x] === 0) {
       grid[y][x] = 1;
     }
+  }
 }
 
 
 function displayGrid() {
-
-  for (let y = 0; y < rows; y++) {
-    for (let x = 0; x < cols; x++) {
+  for (let y=0; y<rows; y++) {
+    for (let x=0; x<cols; x++) {
       if (grid[y][x] === 0) {
         fill("blue");
       }
       if (grid[y][x] === 1) {
-        fill ("green");
+        fill("red");
       }
       rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
     }
   }
 }
 
-
-function createEmptyGrid(cols,rows ) {
+function createEmptyGrid(cols, rows) {
   let empty = [];
-  for (let y = 0; y < rows; y++) {
+  for (let y=0; y<rows; y++) {
     empty.push([]);
-    for (let x = 0; x < cols; x++) {
+    for (let x=0; x<cols; x++) {
       empty[y].push(0);
     }
   }
   return empty;
-}
 }
