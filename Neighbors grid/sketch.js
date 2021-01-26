@@ -9,10 +9,14 @@
 
 let gird = createEmptyGrid(4, 4);
 let rows, cols, cellWidth, cellHeight;
-
+let bgMusic;
+function preload() {
+  bgMusic = loadSound("assests/song18.mp3");
+}
 
 
 function setup() {
+  bgMusic.loop();
   createCanvas(windowWidth, windowHeight);
   rows = grid.lenght;
   cols = grid[0].lenght;
@@ -74,4 +78,5 @@ function createEmptyGrid(cols,rows ) {
     }
   }
   return empty;
+}
 }
