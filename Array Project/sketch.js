@@ -1,15 +1,15 @@
-// Project Title
-// Your Name
-// Date
+// Only one color 
+// Corey Klassen
+// Jan, 27th, 2021
 //
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
 
   
-// Grid Neighbours
+// Only one color
 
-let grid = createEmptyGrid(4, 4);
+let grid = createEmptyGrid(10, 10);
 let rows, cols, cellWidth, cellHeight;
 
 
@@ -27,6 +27,7 @@ function draw() {
 }
 
 function mousePressed() {
+
   
   let x = Math.floor(mouseX / cellWidth);
   let y = Math.floor(mouseY / cellHeight);
@@ -55,10 +56,10 @@ function displayGrid() {
   for (let y=0; y<rows; y++) {
     for (let x=0; x<cols; x++) {
       if (grid[y][x] === 0) {
-        fill("teal");
+        fill("green");
       }
       if (grid[y][x] === 1) {
-        fill("red");
+        fill("Fuchsia");
       }
       rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
     }
@@ -71,6 +72,68 @@ function createEmptyGrid(cols, rows) {
     empty.push([]);
     for (let x=0; x<cols; x++) {
       empty[y].push(0);
+    }
+  }
+  return empty;
+}
+
+
+function keyPressed() {
+  if (key === "e") {
+    grid = createEasyGrid(cols, rows);
+  }
+  if (key === "m") {
+    grid = createMediumGrid(cols, rows);
+  }
+  if (key === "h") {
+    grid = createHardGrid(cols, rows);
+  }
+}
+
+function createEasyGrid(cols, rows) {
+  let empty = [];
+  for (let y=0; y<rows; y++) {
+    empty.push([]);
+    for (let x=0; x<cols; x++) {
+      if(random(60) < 50){
+        empty[y].push(0);
+      }
+      else {
+        empty[y].push(1);
+      }
+    }
+  }
+  return empty;
+}
+
+function createMediumGrid(cols, rows) {
+  let empty = [];
+  for (let y=0; y<rows; y++) {
+    empty.push([]);
+    for (let x=0; x<cols; x++) {
+      if(random(90) < 50){
+        empty[y].push(0);
+      }
+      else {
+        empty[y].push(1);
+      }
+    }
+  }
+  return empty;
+}
+
+
+function createHardGrid(cols, rows) {
+  let empty = [];
+  for (let y=0; y<rows; y++) {
+    empty.push([]);
+    for (let x=0; x<cols; x++) {
+      if(random(150) < 50){
+        empty[y].push(0);
+      }
+      else {
+        empty[y].push(1);
+      }
     }
   }
   return empty;
