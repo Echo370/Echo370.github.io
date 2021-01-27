@@ -5,19 +5,16 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
+
+  
+// Grid Neighbours
+
 let grid = createEmptyGrid(4, 4);
 let rows, cols, cellWidth, cellHeight;
-let bgMusic;
-let clickSound;
 
-function preload() {
-  bgMusic = loadSound("assets/background.mp3");
-  clickSound = loadSound("assets/click3.wav");
-}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  bgMusic.loop();
   rows = grid.length;
   cols = grid[0].length;
   cellWidth = width/cols;
@@ -30,16 +27,15 @@ function draw() {
 }
 
 function mousePressed() {
-  clickSound.play();
   
   let x = Math.floor(mouseX / cellWidth);
   let y = Math.floor(mouseY / cellHeight);
 
   toggleCell(x, y);   //self
-  toggleCell(x, y-1); //north
-  toggleCell(x, y+1); //south
-  toggleCell(x+1, y); //east
-  toggleCell(x-1, y); //west
+  //toggleCell(x, y-1); //north
+  //toggleCell(x, y+1); //south
+  //toggleCell(x+1, y); //east
+  //toggleCell(x-1, y); //west
 }
 
 function toggleCell(x, y) {
@@ -59,7 +55,7 @@ function displayGrid() {
   for (let y=0; y<rows; y++) {
     for (let x=0; x<cols; x++) {
       if (grid[y][x] === 0) {
-        fill("blue");
+        fill("teal");
       }
       if (grid[y][x] === 1) {
         fill("red");
@@ -79,4 +75,3 @@ function createEmptyGrid(cols, rows) {
   }
   return empty;
 }
-© 2021 GitHub, Inc.
