@@ -1,5 +1,5 @@
-const ROWS = 20;
-const COLS = 20;
+const ROWS = 10;
+const COLS = 10;
 let grid, cellWidth, cellHeight;
 let playerX = 0;
 let playerY = 0;
