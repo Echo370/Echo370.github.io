@@ -21,6 +21,16 @@ function setup() {
   cellHeight = height/rows;
 }
 
+//function preload() {
+  //someMaze = loadJSON("assets/myMaze.json");
+  //playerImg = loadImage("assets/cat.png");
+ // wallImg = loadImage("assets/wall.png");
+  //fruitImg = loadImage("assets/apple.png");
+  //bgMusic = loadSound ("assets/song18.mp3");
+//}
+
+
+
 function draw() {
   background(220);
   displayGrid();
@@ -56,6 +66,7 @@ function displayGrid() {
       }
       if (grid[y][x] === 1) {
         fill("Fuchsia");
+        //image(fruitImg, x*cellWidth, y*cellHeight, cellWidth, cellHeight);
       }
       rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
     }
