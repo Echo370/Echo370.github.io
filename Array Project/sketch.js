@@ -9,7 +9,7 @@
   
 // Only one color
 
-let grid = createEmptyGrid(10, 10);
+let grid = createEmptyGrid(7, 7);
 let rows, cols, cellWidth, cellHeight;
 
 
@@ -40,13 +40,9 @@ function mousePressed() {
 }
 
 function toggleCell(x, y) {
-  //check that the coordinates are in the array
   if (x >= 0 && x < cols && y >= 0 && y < rows) {
     if (grid[y][x] === 1) {
       grid[y][x] = 0;
-    }
-    else if (grid[y][x] === 0) {
-      grid[y][x] = 1;
     }
   }
 }

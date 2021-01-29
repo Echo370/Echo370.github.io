@@ -1,20 +1,23 @@
-const ROWS = 10;
-const COLS = 10;
+const ROWS = 12;
+const COLS = 12;
 let grid, cellWidth, cellHeight;
 let playerX = 0;
 let playerY = 0;
 let someMaze;
 let playerImg, wallImg, grassImg;
+//let bgMusic;
 
-//function preload() {
+function preload() {
   //someMaze = loadJSON("assets/myMaze.json");
- // playerImg = loadImage("assets/red-ghost.png");
-  //wallImg = loadImage("assets/wall.png");
-  //grassImg = loadImage("assets/grass.png");
-//}
+  playerImg = loadImage("assets/cat.png");
+  wallImg = loadImage("assets/wall.png");
+  grassImg = loadImage("assets/TileGrass.png");
+  //bgMusic = loadSound ("assets/song18.mp3");
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  //bgMusic.loop();
 
   grid = createEmptyGrid(COLS, ROWS);
   cellWidth = width / COLS;
@@ -82,18 +85,19 @@ function displayGrid() {
   for (let y=0; y<ROWS; y++) {
     for (let x=0; x<COLS; x++) {
       if (grid[y][x] === 0) {
-         fill("white");
-        //image(grassImg, x*cellWidth, y*cellHeight, cellWidth, cellHeight);
+         //fill("white");
+        image(grassImg, x*cellWidth, y*cellHeight, cellWidth, cellHeight);
       }
       else if (grid[y][x] === 1) {
-         fill("black");
-        //image(wallImg, x*cellWidth, y*cellHeight, cellWidth, cellHeight);
+         //fill("black");
+        image(wallImg, x*cellWidth, y*cellHeight, cellWidth, cellHeight);
       }
       else if (grid[y][x] === 9) {
-         fill("red");
-        //image(playerImg, x*cellWidth, y*cellHeight, cellWidth, cellHeight);
+         
+        //fill("red");
+        image(playerImg, x*cellWidth, y*cellHeight, cellWidth, cellHeight);
       }
-       rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
+       //rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
     }
   }
 }
