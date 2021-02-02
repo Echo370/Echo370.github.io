@@ -1,16 +1,12 @@
 // Only one color 
 // Corey Klassen
 // Jan, 27th, 2021
-//
-// Extra for Experts:
-// - describe what you did to take this project "above and beyond"
-
-
-  
-// Only one color
 
 let grid = createEmptyGrid(7, 7);
 let rows, cols, cellWidth, cellHeight;
+let startTime = 0;
+let waitTime = 8000;
+let isTimerGoing = false;
 
 
 function setup() {
@@ -66,6 +62,7 @@ function displayGrid() {
       }
       if (grid[y][x] === 1) {
         fill("Fuchsia");
+        //add timer here?, check if fuchsie, if it is wait 8 sec, after 8 sec if still there change to green 
         //image(fruitImg, x*cellWidth, y*cellHeight, cellWidth, cellHeight);
       }
       rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
@@ -87,12 +84,18 @@ function createEmptyGrid(cols, rows) {
 
 function keyPressed() {
   if (key === "e") {
+    startTime = millis();
+    isTimerGoing = true;
     grid = createEasyGrid(cols, rows);
   }
   if (key === "m") {
+    startTime = millis();
+    isTimerGoing = true;
     grid = createMediumGrid(cols, rows);
   }
   if (key === "h") {
+    startTime = millis();
+    isTimerGoing = true;
     grid = createHardGrid(cols, rows);
   }
 }
