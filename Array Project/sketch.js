@@ -62,7 +62,7 @@ function displayGrid() {
       }
       if (grid[y][x] === 1) {
         fill("Fuchsia");
-        //add timer here?, check if fuchsie, if it is wait 8 sec, after 8 sec if still there change to green 
+        //add timer here?, check if fuchsie, if it is wait 8 sec, after 8 sec if still there change to blue 
         //image(fruitImg, x*cellWidth, y*cellHeight, cellWidth, cellHeight);
       }
       rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
