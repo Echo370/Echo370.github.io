@@ -1,13 +1,16 @@
-// Only one color 
+// Gird-Based Game Assignment 
 // Corey Klassen
 // Jan, 27th, 2021
+
+// Only one color, make the grid all red and get rid of any
+//black tiles you see, you let a black tile stay to long it'll
+//turn white meaning you failed.
 
 let grid = createEmptyGrid(7, 7);
 let rows, cols, cellWidth, cellHeight;
 let startTime = 0;
 let waitTime = 8000;
 let isTimerGoing = false;
-
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -18,14 +21,8 @@ function setup() {
 }
 
 //function preload() {
-  //someMaze = loadJSON("assets/myMaze.json");
-  //playerImg = loadImage("assets/cat.png");
- // wallImg = loadImage("assets/wall.png");
-  //fruitImg = loadImage("assets/apple.png");
   //bgMusic = loadSound ("assets/song18.mp3");
 //}
-
-
 
 function draw() {
   background(220);
@@ -33,16 +30,9 @@ function draw() {
 }
 
 function mousePressed() {
-
-  
   let x = Math.floor(mouseX / cellWidth);
   let y = Math.floor(mouseY / cellHeight);
-
-  toggleCell(x, y);   //self
-  //toggleCell(x, y-1); //north
-  //toggleCell(x, y+1); //south
-  //toggleCell(x+1, y); //east
-  //toggleCell(x-1, y); //west
+  toggleCell(x, y); 
 }
 
 function toggleCell(x, y) {
@@ -53,17 +43,20 @@ function toggleCell(x, y) {
   }
 }
 
-
+//creates grid from line 71-99. 
 function displayGrid() {
   for (let y=0; y<rows; y++) {
     for (let x=0; x<cols; x++) {
       if (grid[y][x] === 0) {
-        fill("green");
+        fill("red");
       }
       if (grid[y][x] === 1) {
-        fill("Fuchsia");
-        //add timer here?, check if fuchsie, if it is wait 8 sec, after 8 sec if still there change to blue 
-        //image(fruitImg, x*cellWidth, y*cellHeight, cellWidth, cellHeight);
+        fill("black");
+        if (isTimerGoing) {
+          if (millis() > startTime + waitTime) {
+            fill("white");
+          }
+        }
       }
       rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
     }
@@ -81,7 +74,7 @@ function createEmptyGrid(cols, rows) {
   return empty;
 }
 
-
+//difficulty setting, e key for easy, m key for medium, and h key for hard.
 function keyPressed() {
   if (key === "e") {
     startTime = millis();
@@ -100,12 +93,13 @@ function keyPressed() {
   }
 }
 
+//line 101-147 creates the difficulty grids.
 function createEasyGrid(cols, rows) {
   let empty = [];
   for (let y=0; y<rows; y++) {
     empty.push([]);
     for (let x=0; x<cols; x++) {
-      if(random(60) < 50){
+      if(random(65) < 50){
         empty[y].push(0);
       }
       else {
@@ -121,7 +115,7 @@ function createMediumGrid(cols, rows) {
   for (let y=0; y<rows; y++) {
     empty.push([]);
     for (let x=0; x<cols; x++) {
-      if(random(90) < 50){
+      if(random(75) < 50){
         empty[y].push(0);
       }
       else {
@@ -132,13 +126,12 @@ function createMediumGrid(cols, rows) {
   return empty;
 }
 
-
 function createHardGrid(cols, rows) {
   let empty = [];
   for (let y=0; y<rows; y++) {
     empty.push([]);
     for (let x=0; x<cols; x++) {
-      if(random(150) < 50){
+      if(random(100) < 50){
         empty[y].push(0);
       }
       else {
