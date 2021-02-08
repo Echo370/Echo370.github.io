@@ -20,15 +20,13 @@ function setup() {
   cellHeight = height/rows;
 }
 
-//function preload() {
-  //bgMusic = loadSound ("assets/song18.mp3");
-//}
 
 function draw() {
   background(220);
   displayGrid();
 }
 
+//Allows grid be affectedd by mouse
 function mousePressed() {
   let x = Math.floor(mouseX / cellWidth);
   let y = Math.floor(mouseY / cellHeight);
