@@ -78,6 +78,17 @@ function setup() {
   StartGame = false;
 }
 
+
+
+function preload(){
+  Cuboo = loadImage("assets/Cuboo.webp");
+  Babara = loadImage("assets/Babara.webp");
+  Infernore = loadImage("assets/Infernore.webp");
+  Poppi = loadImage("assets/Poppi.png");
+  backPurple = loadImage("assets/purpleBackground.jpg");
+  backBlue = loadImage("assets/blueBackground.jpg");
+}
+
 //Checks Enemy Health
 //Enemy and Character health needs to be fixed 
 function CheckEnemyHealth() {
@@ -286,6 +297,7 @@ function keyPressed() {
     //let enemy = true;
     StartGame = true;
     background("gray");
+    image(backBlue, 0, 0, windowWidth, windowWidth);
     fill("green");
     strokeWeight(2);
     rect(1349, 50, 50, 50);
@@ -339,10 +351,11 @@ function keyPressed() {
       ellipse(370, 540, 300, 100);
 
       //Character Sprite
-      fill("yellow");
-      ellipse(370, 500, 100, 100);
-      fill("black");
-      ellipse(370, 500, 50, 50);
+      image(Infernore, 270, 370, 200, 200);
+      //fill("yellow");
+      //ellipse(370, 500, 100, 100);
+      //fill("black");
+      //ellipse(370, 500, 50, 50);
     }
 
   }
@@ -379,10 +392,11 @@ function keyPressed() {
     ellipse(370, 540, 300, 100);
 
     //Character sprite
-    fill("purple");
-    ellipse(370, 500, 100, 100);
-    fill("black");
-    ellipse(370, 500, 50, 50);
+    image(Cuboo, 270, 370, 200, 200);
+    //fill("purple");
+    //ellipse(370, 500, 100, 100);
+    //fill("black");
+    //ellipse(370, 500, 50, 50);
     }
 
   }
@@ -419,10 +433,11 @@ function keyPressed() {
       ellipse(370, 540, 300, 100);
 
       //Character Sprite
-      fill("red");
-      ellipse(370, 500, 100, 100);
-      fill("pink");
-      ellipse(370, 500, 50, 50);
+      image(Babara, 270, 370, 200, 200);
+      //fill("red");
+      //ellipse(370, 500, 100, 100);
+      //fill("pink");
+      //ellipse(370, 500, 50, 50);
     }
   
   }
@@ -459,10 +474,11 @@ function keyPressed() {
       ellipse(370, 540, 300, 100);
 
       //Character Sprite
-      fill("Blue");
-      ellipse(370, 500, 100, 100);
-      fill("White");
-      ellipse(370, 500, 50, 50);
+      image(Poppi, 270, 370, 200, 200);
+      //fill("Blue");
+      //ellipse(370, 500, 100, 100);
+      //fill("White");
+      //ellipse(370, 500, 50, 50);
     }
   }
     
