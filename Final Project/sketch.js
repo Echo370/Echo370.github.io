@@ -87,6 +87,7 @@ function preload(){
   Poppi = loadImage("assets/Poppi.png");
   backPurple = loadImage("assets/purpleBackground.jpg");
   backBlue = loadImage("assets/blueBackground.jpg");
+  Steelhead = loadImage("assets/Steelhead.webp");
 }
 
 //Checks Enemy Health
@@ -311,10 +312,11 @@ function keyPressed() {
     ellipse(1100, 300, 300, 100);
 
     //Enemy Sprite
-    fill("Black");
-    ellipse(1100, 270, 100, 100);
-    fill(51, 0, 25);
-    ellipse(1100, 270, 20, 20);
+    image(Steelhead, 1000, 140, 200, 200);
+    //fill("Black");
+    //ellipse(1100, 270, 100, 100);
+    //fill(51, 0, 25);
+    //ellipse(1100, 270, 20, 20);
 
   }
   //Bottom left Character health bars
