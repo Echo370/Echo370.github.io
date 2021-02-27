@@ -1,8 +1,6 @@
 // RPG battle
 // Corey Klassen
 // Feb, 23rd, 2021
-//things that are needed;timer for moves to be shown, enemy random attack, balance game, active health
-
 
 let StartGame = true;
 let enemyhealth = 150;
@@ -313,14 +311,10 @@ function keyPressed() {
 
     //Enemy Sprite
     image(Steelhead, 1000, 140, 200, 200);
-    //fill("Black");
-    //ellipse(1100, 270, 100, 100);
-    //fill(51, 0, 25);
-    //ellipse(1100, 270, 20, 20);
 
   }
   //Bottom left Character health bars
-  //Character 1 health bar, Ryuji
+  //Character 1 health bar, Infernore
   if (key === "r") {
     if(StartGame === true) {
       if(charaAlive === false) {
@@ -354,14 +348,9 @@ function keyPressed() {
 
       //Character Sprite
       image(Infernore, 270, 370, 200, 200);
-      //fill("yellow");
-      //ellipse(370, 500, 100, 100);
-      //fill("black");
-      //ellipse(370, 500, 50, 50);
     }
-
   }
-  //Character 2 health bar, Joker
+  //Character 2 health bar, Cuboo
   if (key === "j") {
     if(StartGame === true) {
       if(charaAlive === false) {
@@ -371,38 +360,33 @@ function keyPressed() {
     }
 
     if (character2 && StartGame === true) {
-    fill(51, 255, 51);
-    rect(50, 649, 50, 50,);
-    rect(100, 649, 50, 50,);
-    rect(150, 649, 50, 50,);
-    rect(200, 649, 50, 50,);
-    rect(250, 649, 50, 50,);
+      fill(51, 255, 51);
+      rect(50, 649, 50, 50,);
+      rect(100, 649, 50, 50,);
+      rect(150, 649, 50, 50,);
+      rect(200, 649, 50, 50,);
+      rect(250, 649, 50, 50,);
 
-    //Move selections
-    fill(51, 255, 51);
-    rect(50, 300, 150, 50);
-    rect(50, 240, 150, 50);
-    rect(50, 360, 150, 50);
-    fill("black");
-    textSize(20);
-    text('2.Drain Whip',54, 320, 150, 50);
-    text('1.Vine Lash',54, 260, 150, 50);
-    text('3.Jungles Wrath',54, 380, 150, 50);
+      //Move selections
+      fill(51, 255, 51);
+      rect(50, 300, 150, 50);
+      rect(50, 240, 150, 50);
+      rect(50, 360, 150, 50);
+      fill("black");
+      textSize(20);
+      text('2.Drain Whip',54, 320, 150, 50);
+      text('1.Vine Lash',54, 260, 150, 50);
+      text('3.Jungles Wrath',54, 380, 150, 50);
 
-    //Ground sprite
-    fill(color(32, 78, 100));
-    ellipse(370, 540, 300, 100);
+      //Ground sprite
+      fill(color(32, 78, 100));
+      ellipse(370, 540, 300, 100);
 
-    //Character sprite
-    image(Cuboo, 270, 370, 200, 200);
-    //fill("purple");
-    //ellipse(370, 500, 100, 100);
-    //fill("black");
-    //ellipse(370, 500, 50, 50);
+      //Character sprite
+      image(Cuboo, 270, 370, 200, 200);
     }
-
   }
-  //Character 3 health bar, Ann
+  //Character 3 health bar, Babara
   if (key === "a") {
     if(StartGame === true) {
       if(charaAlive === false) {
@@ -436,14 +420,9 @@ function keyPressed() {
 
       //Character Sprite
       image(Babara, 270, 370, 200, 200);
-      //fill("red");
-      //ellipse(370, 500, 100, 100);
-      //fill("pink");
-      //ellipse(370, 500, 50, 50);
     }
-  
   }
-  //Character 4 health bar, Yusuke
+  //Character 4 health bar, Poppi
   if (key === "y") {
     if(StartGame === true) {
       if(charaAlive === false) {
@@ -477,10 +456,6 @@ function keyPressed() {
 
       //Character Sprite
       image(Poppi, 270, 370, 200, 200);
-      //fill("Blue");
-      //ellipse(370, 500, 100, 100);
-      //fill("White");
-      //ellipse(370, 500, 50, 50);
     }
   }
     
@@ -488,18 +463,50 @@ function keyPressed() {
   //Move 1
   if (key === "1") {
     if (character1 && StartGame === true) {
+      stroke("yellow");
+      strokeWeight(7);
+      fill("black");
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("yellow");
+      textSize(40);
+      text('Infernore  used  Hard  Knukle!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 15;
       CheckEnemyHealth();
     }
     else if (character2 && StartGame === true) {
+      stroke("green");
+      strokeWeight(7);
+      fill("black");
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("Green");
+      textSize(40);
+      text('Cuboo  used  Vine  Lash!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 15;
       CheckEnemyHealth();
     }
     else if (character3 && StartGame === true) {
+      stroke("blue");
+      strokeWeight(7);
+      fill("black");
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("Blue")
+      textSize(40);
+      text('Babara  used  Drown!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 15;
       CheckEnemyHealth();
     }
     else if (character4 && StartGame === true) {
+      stroke("purple");
+      strokeWeight(7);
+      fill("black")
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("purple")
+      textSize(40);
+      text('Poppi  used  Slash!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 15;
       CheckEnemyHealth();
     }
@@ -508,20 +515,52 @@ function keyPressed() {
   //Move 2
   if (key === "2") {
     if (character1 && StartGame === true) {
+      stroke("yellow");
+      strokeWeight(7);
+      fill("black");
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("yellow");
+      textSize(40);
+      text('Infernore  used  Flame Remix!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 35;
       health1 = health1 - 10;
       CheckEnemyHealth();
     }
     else if (character2 && StartGame === true) {
+      stroke("green");
+      strokeWeight(7);
+      fill("black");
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("Green");
+      textSize(40);
+      text('Cuboo  used  Drain  Whip!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 10;
       health2 = health2 + 20;
       CheckEnemyHealth();
     }
     else if (character3 && StartGame === true) {
+      stroke("blue");
+      strokeWeight(7);
+      fill("black");
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("Blue")
+      textSize(40);
+      text('Babara  used  Hail  Storm!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 22;
       CheckEnemyHealth();
     }
     else if (character4 && StartGame === true) {
+      stroke("purple");
+      strokeWeight(7);
+      fill("black")
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("purple")
+      textSize(40);
+      text('Poppi  used  Twilight  Time!', 90, 60, 600, 70);
       enemyhealth = enemyhealth -10;
       health4 = health4 + 20;
       CheckEnemyHealth();
@@ -531,20 +570,52 @@ function keyPressed() {
   //Move3
   if (key === "3") {
     if (character1 && StartGame === true) {
+      stroke("yellow");
+      strokeWeight(7);
+      fill("black");
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("yellow");
+      textSize(40);
+      text('Infernore  used  Inferno  Buster!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 50;
       health1 = health1 - 25;
       CheckEnemyHealth();
     }
     else if (character2 && StartGame === true) {
+      stroke("green");
+      strokeWeight(7);
+      fill("black");
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("Green");
+      textSize(40);
+      text('Cuboo  used  Jungles  Wrath!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 35;
       health2 = health2 - 15;
       CheckEnemyHealth();
     }
     else if (character3 && StartGame === true) {
+      stroke("blue");
+      strokeWeight(7);
+      fill("black");
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("Blue")
+      textSize(40);
+      text('Babara  used  Abyssal  Depths!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 30;
       CheckEnemyHealth();
     }
     else if (character4 && StartGame === true) {
+      stroke("purple");
+      strokeWeight(7);
+      fill("black")
+      rect(80, 50, 600, 70);
+      noStroke();
+      fill("purple")
+      textSize(40);
+      text('Poppi  used  Luna  Blast!', 90, 60, 600, 70);
       enemyhealth = enemyhealth - 50;
       health4 = health4 - 25;
       CheckEnemyHealth();
