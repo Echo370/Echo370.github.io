@@ -291,13 +291,13 @@ function EnemyTurn() {
   let damage = 0;
   let move = GetEnemyAttack();
   if(move === 1) {
-    damage = 25;
+    damage = 15;
   }
   else if(move === 2) {
-    damage = 35;
+    damage = 25;
   }
   else if(move === 3) {
-    damage = 150;
+    damage = 35;
   }
 
   //Picks character to attack
